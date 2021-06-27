@@ -58,8 +58,24 @@
 # # call the function
 # smallest
 
-def productof(number1, number2, number3)
-  number1 * number2 * number3
+# def product(a, b, c)
+#   puts a * b * c
+# end
+
+# product(5, 6, 10)
+
+def select_less_than_five(array)
+  index = 0
+  new_array = []
+
+  array.each do
+    if array[index] < 5
+      new_array << array[index]
+    end
+    index += 1
+  end
+
+  p new_array
 end
 
-puts productof(2, 3, 6)
+select_less_than_five([10, 3, 4, 55, 32, 6, 1])
