@@ -64,18 +64,44 @@
 
 # product(5, 6, 10)
 
-def select_less_than_five(array)
-  index = 0
-  new_array = []
+# def select_less_than_five(array)
+#   index = 0
+#   new_array = []
 
-  array.each do
-    if array[index] < 5
-      new_array << array[index]
-    end
+#   array.each do
+#     if array[index] < 5
+#       new_array << array[index]
+#     end
+#     index += 1
+#   end
+
+#   p new_array
+# end
+
+# select_less_than_five([10, 3, 4, 55, 32, 6, 1])
+
+input = [4, 6, 1, 4, 2, 8, 3, 4, 1, 7]
+# remove duplicates
+
+output = []
+index = 0
+
+input.each do
+  if input[index] != input[index + 1]
+    output << input[index]
+    index += 1
+  else
     index += 1
   end
-
-  p new_array
+  p output
 end
 
-select_less_than_five([10, 3, 4, 55, 32, 6, 1])
+p output
+
+# compare 0 to 1
+# if same, loopback
+#   if different, add 0 to output
+
+# compare each to index
+# if same, move on
+#   if different, add to new array
