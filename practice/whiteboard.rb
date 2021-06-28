@@ -80,23 +80,23 @@
 
 # select_less_than_five([10, 3, 4, 55, 32, 6, 1])
 
-input = [4, 6, 1, 4, 2, 8, 3, 4, 1, 7]
-# remove duplicates
+# input = [4, 6, 1, 4, 2, 8, 3, 4, 1, 7]
+# # remove duplicates
 
-output = []
-index = 0
+# output = []
+# index = 0
 
-input.each do
-  if input[index] != input[index + 1]
-    output << input[index]
-    index += 1
-  else
-    index += 1
-  end
-  p output
-end
+# input.each do
+#   if input[index] != input[index + 1]
+#     output << input[index]
+#     index += 1
+#   else
+#     index += 1
+#   end
+#   p output
+# end
 
-p output
+# p output
 
 # compare 0 to 1
 # if same, loopback
@@ -105,3 +105,12 @@ p output
 # compare each to index
 # if same, move on
 #   if different, add to new array
+
+class StringModifier
+  def make_question(input)
+    return input + "?"
+  end
+end
+
+userinput = StringModifier.new
+puts userinput.make_question("Julian")
