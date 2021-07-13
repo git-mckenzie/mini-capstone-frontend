@@ -10,6 +10,9 @@ var app = new Vue({
       number3: 0,
       sum: 0,
       floatsum: 0,
+      showInfo: false,
+      stuffs: ["stuff1", "stuff2", "stuff3"],
+      newStuff: "",
     };
   },
   methods: {
@@ -22,6 +25,10 @@ var app = new Vue({
     computeBothSums: function() {
       this.sum = parseInt(this.number1) + parseInt(this.number2) + parseInt(this.number3);
       this.floatsum = parseFloat(this.number1) + parseFloat(this.number2) + parseFloat(this.number3);
-    }
+    },
+    addNewStuff: function () {
+      this.stuffs.push(this.newStuff);
+      this.newStuff = "";
+    },
   },
 });

@@ -6,6 +6,12 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="calculator.js" defer></script>
   </head>
+  <style>
+    .disabled {
+      color: rgb(98, 135, 135);
+      transition: color 2s ease-in-out 1s;
+    }
+  </style>
   <body>
     <div id="app">
       {{ message }}
@@ -32,6 +38,20 @@
       <p>The sum is: {{sum}}</p>
 
       <p>The floating sum is: {{floatsum}}</p>
+
+      <div>
+        <button v-on:click="showInfo = !showInfo">toggle</button>
+        <!-- <input type="checkbox" v-on:click="showInfo = !showInfo" /> -->
+        <!-- <input type="text" v-if="showInfo" v-model="toggletest" /> -->
+        <!-- <p v-if="showInfo">toggle test</p> -->
+        <p v-bind:class="{disabled: showInfo}">Click to fade</p>
+      </div>
+
+      <input type="text" v-model="newStuff" />
+      <button v-on:click="addNewStuff()">Add a new stuffs</button>
+      <div v-for="stuff in stuffs">
+        <p>{{ stuff }}</p>
+      </div>
     </div>
   </body>
 </html>
