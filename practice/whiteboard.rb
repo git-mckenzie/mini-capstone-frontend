@@ -106,11 +106,11 @@
 # if same, move on
 #   if different, add to new array
 
-class StringModifier
-  def make_question(input)
-    return input + "?"
-  end
-end
+# class StringModifier
+#   def make_question(input)
+#     return input + "?"
+#   end
+# end
 
-userinput = StringModifier.new
-puts userinput.make_question("Julian")
+# userinput = StringModifier.new
+# puts userinput.make_question("Julian")
