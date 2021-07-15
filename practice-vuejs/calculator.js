@@ -13,6 +13,7 @@ var app = new Vue({
       showInfo: false,
       stuffs: ["stuff1", "stuff2", "stuff3"],
       newStuff: "",
+      todos: [],
     };
   },
   methods: {
@@ -29,6 +30,13 @@ var app = new Vue({
     addNewStuff: function () {
       this.stuffs.push(this.newStuff);
       this.newStuff = "";
+    },
+    loadTodos: function() { 
+      axios
+        .get("https://jsonplaceholder.typicode.com/todos").then(response => {
+          console.log(response.data);
+          this.todos = response.data;
+        });
     },
   },
 });

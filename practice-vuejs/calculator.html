@@ -5,6 +5,7 @@
     <title>Vue.js Intro</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="calculator.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <style>
     .disabled {
@@ -13,7 +14,15 @@
     }
   </style>
   <body>
-    <div id="app">
+    <div id="app">      
+      <div>
+      <button v-on:click="loadTodos()">Load Todos</button>
+      <div v-for="todos in todos">
+        <p>{{ todos }}</p>
+      </div>
+      <p></p>
+      </div>
+      <div>
       {{ message }}
       <div>
         1st number:
@@ -52,6 +61,7 @@
       <div v-for="stuff in stuffs">
         <p>{{ stuff }}</p>
       </div>
+
     </div>
   </body>
 </html>
