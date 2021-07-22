@@ -1,6 +1,14 @@
 <template>
   <div class="home">
-    <h1>{{ message }}</h1>
+    <h1>All Movies</h1>
+    <div v-for="movie in movies" v-bind:key="movie.id">
+      <h2>{{ movie.title }}</h2>
+      <!-- <img v-bind:src="photo.url" v-bind:alt="photo.name" /> -->
+      <p>Year: {{ movie.year }}</p>
+      <p>Plot: {{ movie.plot }}</p>
+      <p>Director: {{ movie.director }}</p>
+      <p>English: {{ movie.english }}</p>
+    </div>
   </div>
 </template>
 <style></style>
