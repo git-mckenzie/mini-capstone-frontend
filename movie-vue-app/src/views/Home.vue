@@ -34,6 +34,8 @@ export default {
     return {
       message: "Welcome to Vue.js!",
       movies: [],
+      newMovieParams: {},
+      currentMovie: {},
     };
   },
   created: function () {
@@ -48,9 +50,30 @@ export default {
     },
     createMovie: function () {
       console.log("Creating a new movie");
-      axios.post("http:/localhost/movies/", this.newMovieParams).then((response) => {
+      axios
+        .post("http:/localhost/movies/", this.newMovieParams)
+        .then((response) => {
         console.log("Success!", response.data);
-        this.movies.push(response.data);
+          this.movies.push(response.data);
+        })
+        .catch((error) => console.log(error.response));
+    },
+    showMovie: function (movie) {
+      console.log(movie);
+      this.currentMovie = movie;
+      document.querySelector("#movie-details").showModal();
+    },
+    updateMovie: function (movie) {
+      var editMovieParams = movie;
+      axios.patch("http://localhost:3000/movies/" + movie.id, editMovieParams).then((response) => {
+        console.log("Success!", response.data);
+      });
+    },
+    destroyMovie: function (movie) {
+      axios.delete("http://localhost:3000/movies/" + movie.id).then((response) => {
+        console.log("Success!", response.data);
+        var index = this.movies.indexOf(movie);
+        this.movies.splice(index, 1);
       });
     },
   },
