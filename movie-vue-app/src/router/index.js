@@ -11,7 +11,6 @@ import MoviesShow from "../views/MoviesShow.vue";
 import MoviesEdit from "../views/MoviesEdit.vue";
 // import MoviesDestroy from "../views/MoviesDestroy.vue";
 
-
 Vue.use(VueRouter);
 
 const routes = [
