@@ -3,12 +3,25 @@
     <h1>All Movies</h1>
     <div v-for="movie in movies" v-bind:key="movie.id">
       <h2>{{ movie.title }}</h2>
-      <!-- <img v-bind:src="photo.url" v-bind:alt="photo.name" /> -->
       <p>Year: {{ movie.year }}</p>
       <p>Plot: {{ movie.plot }}</p>
       <p>Director: {{ movie.director }}</p>
       <p>English: {{ movie.english }}</p>
     </div>
+    <h1>New Movie!</h1>
+    <div>
+      Title:
+      <input type="text" v-model="newMovieParams.title" />
+      Year:
+      <input type="text" v-model="newMovieParams.year" />
+      Plot:
+      <input type="text" v-model="newMovieParams.plot" />
+      Director:
+      <input type="text" v-model="newMovieParams.director" />
+      English:
+      <input type="text" v-model="newMovieParams.english" />
+    </div>
+    <button v-on:click="createMovie()">Create</button>
   </div>
 </template>
 <style></style>
@@ -31,6 +44,13 @@ export default {
       axios.get("http://localhost:3000/movies").then((response) => {
         this.movies = response.data;
         console.log("All movies:", this.movies);
+      });
+    },
+    createMovie: function () {
+      console.log("Creating a new movie");
+      axios.post("http:/localhost/movies/", this.newMovieParams).then((response) => {
+        console.log("Success!", response.data);
+        this.movies.push(response.data);
       });
     },
   },
