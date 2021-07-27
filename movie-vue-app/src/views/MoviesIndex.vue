@@ -20,7 +20,7 @@ export default {
     };
   },
   created: function () {
-    this.indexmovies();
+    this.indexMovies();
   },
   methods: {
     indexMovies: function () {
