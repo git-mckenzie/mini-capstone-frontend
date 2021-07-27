@@ -3,7 +3,10 @@
     <div v-for="movie in movies" :key="movie.id">
       <router-link v-bind:to="`/movies/${movie.id}`">
         <h2>Title: {{ movie.title }}</h2>
-        <p>Chef: {{ movie.chef }}</p>
+        <p>Year: {{ movie.year }}</p>
+        <p>Plot: {{ movie.plot }}</p>
+        <p>Director: {{ movie.director }}</p>
+        <p>English: {{ movie.english }}</p>
         <img v-bind:src="movie.image_url" alt="movie.title" />
       </router-link>
     </div>
