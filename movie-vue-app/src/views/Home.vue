@@ -53,7 +53,7 @@ export default {
       axios
         .post("http:/localhost/movies/", this.newMovieParams)
         .then((response) => {
-        console.log("Success!", response.data);
+          console.log("Success!", response.data);
           this.movies.push(response.data);
         })
         .catch((error) => console.log(error.response));

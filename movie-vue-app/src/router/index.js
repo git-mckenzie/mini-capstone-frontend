@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-// import About from "../views/About.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
@@ -9,7 +8,6 @@ import MoviesIndex from "../views/MoviesIndex.vue";
 import MoviesNew from "../views/MoviesNew.vue";
 import MoviesShow from "../views/MoviesShow.vue";
 import MoviesEdit from "../views/MoviesEdit.vue";
-// import MoviesDestroy from "../views/MoviesDestroy.vue";
 
 Vue.use(VueRouter);
 
@@ -23,7 +21,6 @@ const routes = [
   { path: "/movies/new", name: "movies-new", component: MoviesNew },
   { path: "/movies/:id", name: "movies-show", component: MoviesShow },
   { path: "/movies/:id/edit", name: "movies-edit", component: MoviesEdit },
-  // { path: "/movies", name: "movies-index", component: MoviesIndex },
 ];
 
 const router = new VueRouter({

@@ -10,27 +10,27 @@
         <input type="text" v-model="currentMovieParams.title" />
       </div>
       <div>
-        <label>Chef:</label>
-        <input type="text" v-model="currentMovieParams.chef" />
+        <label>Year:</label>
+        <input type="text" v-model="currentMovieParams.year" />
       </div>
       <div>
-        <label>Prep Time:</label>
-        <input type="text" v-model="currentMovieParams.prep_time" />
+        <label>Plot:</label>
+        <input type="text" v-model="currentMovieParams.plot" />
       </div>
       <div>
-        <label>Ingredients:</label>
-        <input type="text" v-model="currentMovieParams.ingredients" />
+        <label>Director:</label>
+        <input type="text" v-model="currentMovieParams.director" />
       </div>
       <div>
-        <label>Directions:</label>
-        <input type="text" v-model="currentMovieParams.directions" />
+        <label>English:</label>
+        <input type="text" v-model="currentMovieParams.english" />
       </div>
-      <div>
+      <!-- <div>
         <label>Image Url:</label>
         <input type="text" v-model="currentMovieParams.image_url" />
-      </div>
+      </div> -->
       <input type="submit" value="Submit" />
-      <button v-on:click="destroyMovie()">Delete</button>
+      <!-- <button v-on:click="destroyMovie()">Delete</button> -->
     </form>
   </div>
 </template>
