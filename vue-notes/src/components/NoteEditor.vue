@@ -8,11 +8,3 @@
     >
   </div>
 </template>
-
-<script>
-export default {
-  components: {
-    NoteEditor,
-  },
-};
-</script>

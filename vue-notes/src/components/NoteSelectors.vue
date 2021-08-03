@@ -1,6 +1,8 @@
 <template>
   <div class="note-selectors">
     <NoteSelector />
+    <NoteSelector />
+    <NoteSelector />
   </div>
 </template>
 
