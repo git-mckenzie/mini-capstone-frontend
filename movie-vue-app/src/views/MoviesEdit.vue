@@ -30,7 +30,7 @@
         <input type="text" v-model="currentMovieParams.image_url" />
       </div> -->
       <input type="submit" value="Submit" />
-      <!-- <button v-on:click="destroyMovie()">Delete</button> -->
+      <button v-on:click="destroyMovie()">Delete</button>
     </form>
   </div>
 </template>
@@ -46,8 +46,8 @@ export default {
   },
   created: function () {
     axios.get(`/movies/${this.$route.params.id}`).then((response) => {
-      console.log("Recipe info:", response.data);
-      this.currentRecipeParams = response.data;
+      console.log("Movie info:", response.data);
+      this.currentMovieParams = response.data;
     });
   },
   methods: {
